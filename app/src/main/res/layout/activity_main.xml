@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/minesweeper_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Minesweeper"
+        android:textColor="#E91E63"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/best_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        tools:text="Best Time: 0s"
+        app:layout_constraintEnd_toEndOf="@+id/minesweeper_label"
+        app:layout_constraintStart_toStartOf="@+id/minesweeper_label"
+        app:layout_constraintTop_toBottomOf="@+id/minesweeper_label" />
+
+    <TextView
+        android:id="@+id/last_game_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        tools:text="Last Game Time: 0s"
+        app:layout_constraintEnd_toEndOf="@+id/best_time"
+        app:layout_constraintStart_toStartOf="@+id/best_time"
+        app:layout_constraintTop_toBottomOf="@+id/best_time" />
+
+    <TextView
+        android:id="@+id/select_difficulty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Select Difficulty"
+        android:textColor="#000000"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/last_game_time"
+        app:layout_constraintStart_toStartOf="@+id/last_game_time"
+        app:layout_constraintTop_toBottomOf="@+id/last_game_time" />
+
+    <RadioGroup
+        android:id="@+id/rb_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/select_difficulty"
+        android:layout_marginStart="8sp"
+        android:layout_marginTop="24sp"
+        android:checkedButton="@id/rb_medium" >
+
+        <RadioButton
+            android:id="@+id/rb_easy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Easy" />
+
+        <RadioButton
+            android:id="@+id/rb_medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Medium" />
+
+        <RadioButton
+            android:id="@+id/rb_hard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hard" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Or"
+        android:textColor="@color/disabledButtonTextColor"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rb_group" />
+
+    <Button
+        android:id="@+id/btn_custom_board"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Make A Custom Board"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/textView5"
+        app:layout_constraintStart_toStartOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <EditText
+        android:id="@+id/et_rows"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="Enter number of rows"
+        android:inputType="phone"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_custom_board" />
+
+    <EditText
+        android:id="@+id/et_columns"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Enter number of columns"
+        android:inputType="phone"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_rows" />
+
+    <EditText
+        android:id="@+id/et_mines"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Enter number of mines"
+        android:inputType="phone"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_columns" />
+
+    <Button
+        android:id="@+id/btn_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_mines" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
